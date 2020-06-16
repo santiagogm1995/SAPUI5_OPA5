@@ -1,0 +1,29 @@
+<mvc:View controllerName="Ejercicio2.Ejercicio2.controller.App" height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:m="sap.m" xmlns:tnt="sap.tnt">
+	<Shell>
+		<tnt:ToolPage id="toolPage">
+			<tnt:header>
+				<f:ShellBar title="{i18n>appTitle}" showMenuButton="true"
+					homeIcon="https://raw.githubusercontent.com/SAP/ui5-tooling/master/docs/images/UI5_logo_wide.png"  showNotifications="true"
+					menuButtonPressed="onMenuButtonPress" showProductSwitcher="true" notificationsNumber="2">
+				</f:ShellBar>
+			</tnt:header>
+			<tnt:sideContent>
+<!--				<tnt:SideNavigation expanded="false" selectedKey="{prueba>/selectedKey}" >
+					<tnt:NavigationList items="{path: 'prueba>/navigation'}">
+						<tnt:NavigationListItem expanded="false" text="{prueba>title}" icon="{prueba>icon}" enabled="{enabled}"  items="{prueba>items}" key="{prueba>key}">
+							<tnt:NavigationListItem text="{prueba>title}" key="{prueba>key}" enabled="{enabled}"></tnt:NavigationListItem>
+						</tnt:NavigationListItem>
+					</tnt:NavigationList>
+					<tnt:fixedItem>
+						<tnt:NavigationList items="{prueba>/fixedNavigation}">
+							<tnt:NavigationListItem text="{prueba>title}" icon="{prueba>icon}"></tnt:NavigationListItem>
+						</tnt:NavigationList>
+					</tnt:fixedItem>
+				</tnt:SideNavigation>-->
+			</tnt:sideContent>
+			<tnt:mainContents>
+				<App id="app"/>
+			</tnt:mainContents>
+		</tnt:ToolPage>
+	</Shell>
+</mvc:View>

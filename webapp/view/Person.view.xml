@@ -1,0 +1,115 @@
+<mvc:View controllerName="Ejercicio2.Ejercicio2.controller.Person" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:f="sap.f" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
+	<f:DynamicPage id="sIdPage" stickySubheaderProvider="iconTabBar" class="sapUiNoContentPadding" showFooter="true" >
+		<!-- DynamicPage Title -->
+		<f:title visible="false">
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="{i18n>Persons}"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<!-- DynamicPage Header -->
+		<f:header>
+			<f:DynamicPageHeader pinnable="false">
+				<f:content>
+					<form:SimpleForm id="SimpleFormChange480" editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0"
+						emptySpanM="0" columnsL="2" columnsM="2" class="editableForm" title="{i18n>HelpSearch}">
+						<form:content>
+							<core:Title/>
+							<Label id="LabelId" text="Id"/>
+							<Input id="InputId" value="" maxLength="255" required="false"/>
+							<Label id="LabelDni" text="Name"/>
+							<Input id="InputDni" value=""/>
+							<Label id="LabelFirstName" text="FirstName"/>
+							<Input id="InputFirstName" value=""/>
+							<Label id="LabelLastName" text="LastName"/>
+							<Input id="InputLastName" value="">
+								<layoutData>
+									<layout:GridData span="L8 M8 S8"/>
+								</layoutData>
+							</Input>
+							<core:Title/>
+							<Label id="LabelDateBirth" text="DateBirth"/>
+							<DatePicker id="InputDateBirth" displayFormat="dd/MM/yyyy" valueFormat="yyyyMMdd" value=""/>
+							<Label id="LabelHeight" text="Height"/>
+							<Input id="InputHeight" value="" type="Text" liveChange="Change"/>
+							<Label id="LabelWeb" text="Web"/>
+							<Input id="InputWeb" value="" type="Text"/>
+							<Label id="LabelTwitter" text="Twitter"/>
+							<Input id="InputTwitter" value="">
+								<layoutData>
+									<layout:GridData span="L8 M8 S8"/>
+								</layoutData>
+							</Input>
+						</form:content>
+					</form:SimpleForm>
+					<FlexBox alignItems="End" justifyContent="End">
+						<Button text="{i18n>Reset}" class="sapUiSmallMargin"></Button>
+						<Button id="btnSearch" text="{i18n>Search}" class="sapUiSmallMargin" press="onSearch"></Button>
+					</FlexBox>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<Table id="idPersonsTable" inset="false" items="{ path: 'Persons>/PersonsCollection' }" visible="true">
+				<columns>
+					<Column id="IdCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Id"/>
+					</Column>
+					<Column id="DnitCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Dni"/>
+					</Column>
+					<Column id="FirstNameCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="FirstName"/>
+					</Column>
+					<Column id="LastNameCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="LastName"/>
+					</Column>
+					<Column id="DateBirthCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="DateBirth"/>
+					</Column>
+					<Column id="WebCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Web"/>
+					</Column>
+					<Column id="TwitterCol" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Twitter"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{Persons>Id}"/>
+							<Text text="{Persons>Dni}"/>
+							<Text text="{Persons>FirstName}"/>
+							<Text text="{Persons>LastName}"/>
+							<Text text="{ path:'Persons>DateBirth' ,formatter:'.formatter.formatFechaString'}"/>
+							<Link text="{Persons>Web}" target="_blank" href="http://{Persons>Web}"/>
+							<Link text="{Persons>Twitter}" target="_blank" href="http://{Persons>Twitter}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<!--<smartTable:SmartTable  id="idPersonsTable" visible="true" entitySet="PERSONSet" smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="true"-->
+			<!--	beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" showRowCount="true"-->
+			<!--	persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="false" class="sapUiResponsiveContentPadding"-->
+			<!--	initiallyVisibleFields="Id,Dni,FirstName,LastName,DateBirth,Web,Twitter"/>-->
+		</f:content>
+		<f:footer>
+			<OverflowToolbar>
+				<Label text="Offline"/>
+				<Switch state="false">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Switch>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add-employee" press="Create"/>
+				<Button icon="sap-icon://delete" press="Delete"/>
+				<Button icon="sap-icon://edit" press="Update"/>
+				<Button icon="sap-icon://download" press="onExport"/>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

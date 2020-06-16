@@ -1,0 +1,7 @@
+.responsive {
+    width: 100%;
+    height: auto;
+}
+.noneDisplayGrid .sapFGridListDefault{
+	display: block;
+}

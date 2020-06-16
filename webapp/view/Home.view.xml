@@ -1,0 +1,27 @@
+<mvc:View controllerName="Ejercicio2.Ejercicio2.controller.Home" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:f="sap.f" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
+	<f:DynamicPage id="sIdPage" stickySubheaderProvider="iconTabBar" class="sapUiNoContentPadding" showFooter="true">
+		<f:content>
+			<FlexBox height="100px" alignItems="Start" justifyContent="Center">
+				<Image src="https://raw.githubusercontent.com/SAP/ui5-tooling/master/docs/images/UI5_logo_wide.png" class="responsive"/>
+			</FlexBox>
+		</f:content>
+		<!-- DynamicPage Footer -->
+		<f:footer>
+			<OverflowToolbar>
+				<Label text="Offline"/>
+				<Switch state="false">
+					<layoutData>
+						<FlexItemData growFactor="1"/>
+					</layoutData>
+				</Switch>
+				<ToolbarSpacer/>
+				<Button text="Evento" press="prueba"/>
+				<Button text="Evento" press="prueba2"/>
+				<Button text="Evento" press="prueba3"/>
+				<Link text="hola" href="https://www.google.com"></Link>
+			</OverflowToolbar>
+		</f:footer>
+	</f:DynamicPage>
+</mvc:View>

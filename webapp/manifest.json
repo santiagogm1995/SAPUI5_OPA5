@@ -1,0 +1,139 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "Ejercicio2.Ejercicio2",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"S4BACKEND": {
+				"uri": "/S4BACKEND/ZCADVARPRYSRV",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "Ejercicio2.Ejercicio2.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.f": {},
+				"sap.tnt": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "Ejercicio2.Ejercicio2.i18n.i18n"
+				}
+			},
+			"S4BACKEND": {
+				"dataSource": "S4BACKEND",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"metadataUrlParams": {
+						"sap-documentation": "heading"
+					}
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "Ejercicio2.Ejercicio2.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Home",
+					"pattern": "",
+					"target": "Home"
+				},
+				{
+					"name": "Person",
+					"pattern": "Person",
+					"target": "Person"
+				},
+				{
+					"name": "PersonId",
+					"pattern": "Person",
+					"target": "Person"
+				}
+			],
+			"targets": {
+				"Targetapp": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "app",
+					"viewName": "App"
+				},
+				"Home": {
+					"viewType": "XML",
+					"viewName": "Home"
+				},
+				"Person": {
+					"viewType": "XML",
+					"viewName": "Person"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f">
+	<Popover class="prueba" showHeader="false" contentWidth="320px" contentHeight="500px" placement="Bottom">
+		<NavContainer id="navCon">
+			<Page id="detail" title="{i18n>Navigation}">
+				<content>
+					<Button text="Home" press="onNav" type="Emphasized" width="100%"/>
+					<Button id="goToPersonPage" text="Person" press="onNav" width="100%"/>
+				</content>
+			</Page>
+		</NavContainer>
+	</Popover>
+</core:FragmentDefinition> 
